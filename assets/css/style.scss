@@ -1,0 +1,150 @@
+/* ================================
+   Global
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+
+  background-color: #f4f7fb; /* gris azulado muy suave */
+  color: #2f3a4a; /* gris oscuro (no negro) */
+  line-height: 1.65;
+}
+
+/* ================================
+   Layout
+================================ */
+.page-content,
+.wrapper,
+main {
+  max-width: 100%;
+  padding: 2.5rem 4rem;
+}
+
+/* En pantallas pequeñas */
+@media (max-width: 900px) {
+  .page-content,
+  .wrapper,
+  main {
+    padding: 1.5rem;
+  }
+}
+
+/* ================================
+   Headings
+================================ */
+h1, h2, h3, h4 {
+  color: #1f2d3d;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.4rem;
+  border-bottom: 3px solid #dbe4f0;
+  padding-bottom: 0.6rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+/* ================================
+   Text & Links
+================================ */
+p {
+  margin: 1rem 0;
+}
+
+a {
+  color: #3b82f6; /* azul profesional */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   Lists
+================================ */
+ul {
+  padding-left: 1.4rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+/* ================================
+   Code blocks
+================================ */
+pre {
+  background-color: #e9eef6;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+code {
+  background-color: #e9eef6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* ================================
+   Tables
+================================ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e1e8f0;
+}
+
+th {
+  background-color: #e9eef6;
+  text-align: left;
+}
+
+/* ================================
+   Blockquotes
+================================ */
+blockquote {
+  border-left: 5px solid #3b82f6;
+  padding-left: 1rem;
+  color: #475569;
+  background: #eef3fb;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+/* ================================
+   Footer (si existe)
+================================ */
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #dbe4f0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
