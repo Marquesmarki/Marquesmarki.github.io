@@ -117,7 +117,8 @@ quit
 
 Això evita avisos i permet validar signatures amb més confiança.
 <img width="940" height="263" alt="image" src="https://github.com/user-attachments/assets/2b06bda2-7c36-4f59-b529-d6b8e99e7e90" />
-
+<img width="940" height="531" alt="image" src="https://github.com/user-attachments/assets/25b5a31a-cd62-4a5f-a87d-6c734c8d2213" />
+<img width="940" height="227" alt="image" src="https://github.com/user-attachments/assets/3ecf913d-e23c-4d27-911a-7e80f7761aa5" />
 
 ---
 
@@ -125,27 +126,24 @@ Això evita avisos i permet validar signatures amb més confiança.
 
 ### 4.1 Habilitar OpenPGP a Thunderbird
 En versions modernes, OpenPGP acostuma a venir **activat per defecte**. 
+<img width="940" height="192" alt="image" src="https://github.com/user-attachments/assets/65916f22-f26e-4d7b-9d7a-c4bb877d481a" />
 
 ### 4.2 Importar la clau privada al Thunderbird (clau personal)
 Per cada compte:
+- Conseguir claus privades
+  <img width="940" height="31" alt="image" src="https://github.com/user-attachments/assets/b5eeb193-1543-4afa-9fd8-12d3a9e3c537" />
 - Thunderbird → **Eines** → **Gestor de claus OpenPGP**
-- **Importar clau OpenPGP personal existent** (fitxer `.asc` privat)
-
-Opcional: generar el fitxer de clau privada amb:
-gpg --armor --export-secret-key alex1@... > clau-privada-alex1.asc
-
-markdown
-Copiar código
+  <img width="940" height="663" alt="image" src="https://github.com/user-attachments/assets/bcd020ec-76f4-415b-9e0e-34b5b5ff4f98" />
+- **Importar clau OpenPGP personal existent** 
+  <img width="940" height="660" alt="image" src="https://github.com/user-attachments/assets/5762d38c-d615-41dd-9d8d-11816e1bd66b" />
 
 
 ### 4.3 Assignar la clau al compte de correu
 - Configuració del compte → **Xifrat d’extrem a extrem**
 - OpenPGP → Afegir/assignar clau
 - Seleccionar la clau corresponent al correu del compte 
-
-**Captures (obligatòries):**
-- Gestor de claus OpenPGP amb les claus importades
-- Pantalla d’assignació de clau al compte 
+<img width="940" height="542" alt="image" src="https://github.com/user-attachments/assets/9afe23f2-5745-4388-8109-84ecc8275bb2" />
+<img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/be4c87ee-8501-4066-b0c3-f93d3faa43e1" />
 
 ---
 
@@ -155,15 +153,14 @@ Copiar código
 - Redactar correu d’usuari 1 → usuari 2
 - Activar **Seguretat → Firmar digitalment**
 - Enviar i introduir la contrasenya de la clau quan la demani 
+<img width="940" height="402" alt="image" src="https://github.com/user-attachments/assets/0e01a7f7-886c-4577-8db0-22412df954a8" />
+
 
 ### 5.2 Verificar la signatura al destinatari
 En obrir el correu rebut, Thunderbird mostra:
 - “**Firma digital correcta**” (o equivalent)
-- Detalls de la clau del signant 
-
-**Captures (obligatòries):**
-- Menú de redacció amb “Firmar digitalment”
-- Correu rebut amb “signatura correcta” 
+- Detalls de la clau del signant
+<img width="940" height="246" alt="image" src="https://github.com/user-attachments/assets/6be7a33c-38ea-4ef3-8202-55a42d280f0c" />
 
 ---
 
@@ -172,22 +169,21 @@ En obrir el correu rebut, Thunderbird mostra:
 ### 6.1 Redactar un correu xifrat
 - Redactar correu
 - Activar **Seguretat → Xifrar**
-- (Recomanat) activar també **Firmar digitalment** per combinar autenticació + confidencialitat 
+<img width="940" height="344" alt="image" src="https://github.com/user-attachments/assets/a0382bff-3791-4687-8002-51da0ff8405d" />
+
 
 ### 6.2 Llegir el correu xifrat
 El destinatari obre el correu i Thunderbird:
 - Detecta que està xifrat
-- Desxifra amb la clau privada (pot demanar contrasenya)
-- Mostra que el missatge està **xifrat** i (si toca) **signat** 
+- Desxifra amb la clau privada
+<img width="940" height="352" alt="image" src="https://github.com/user-attachments/assets/bbc78876-1a0c-473f-8325-7cd479c3c18d" />
+
+
 
 ### 6.3 Comprovar el xifrat sense clau privada
 Per demostrar que el contingut no és llegible sense clau:
-- Visualitzar el “codi font” / contingut brut del missatge i comprovar que el contingut no apareix en clar (format OpenPGP/MIME).
+<img width="940" height="906" alt="image" src="https://github.com/user-attachments/assets/5f908443-03ff-4815-a237-134d7c3bca1c" />
 
-**Captures (obligatòries):**
-- Menú de redacció amb “Xifrar”
-- Correu rebut mostrant que està xifrat
-- Vista del contingut brut / codi font on es vegi que no està en clar
 
 ---
 
@@ -198,45 +194,31 @@ Enviar un correu amb:
 - **Xifrar**
 - **Firmar digitalment**
 
-Això aporta:
-- Autenticació (signatura)
-- Integritat (no modificació)
-- Confidencialitat (E2EE) 
+<img width="940" height="344" alt="image" src="https://github.com/user-attachments/assets/8517b719-f26a-45a7-9bc4-e588c63716f9" />
 
 ### 7.2 Revocar una clau GPG
 Crear certificat de revocació:
 gpg --gen-revoke alex1@... > revoke-alex1.asc
 
-perl
-Copiar código
-Guardar el fitxer en lloc segur. 
+<img width="940" height="300" alt="image" src="https://github.com/user-attachments/assets/59392bca-cae6-44dc-84ad-ce3d311c2636" />
+
 
 ### 7.3 Publicar la clau en un servidor de claus
 1) Obtenir ID de la clau:
 gpg --list-keys
 
-yaml
-Copiar código
 2) Enviar la clau:
 gpg --send-keys --keyserver keys.openpgp.org <ID-CLAU>
 
-makefile
-Copiar código
-:contentReference[oaicite:26]{index=26}
+<img width="940" height="260" alt="image" src="https://github.com/user-attachments/assets/c7df1673-ea97-491e-9de8-7e0c0b735439" />
+
+
 
 ### 7.4 Còpia de seguretat de la clau privada
 Exportar clau privada:
 gpg --armor --export-secret-keys alex1@... > backup-clau-privada-alex1.asc
 
-yaml
-Copiar código
-**Important:** fitxer molt sensible; cal guardar-lo xifrat i protegit.
-
-**Captures (obligatòries):**
-- Enviament signat + xifrat
-- Revocació (comanda + fitxer creat)
-- Publicació (ID de clau + intent d’enviament)
-- Backup de clau privada (comanda + fitxer)
+<img width="940" height="58" alt="image" src="https://github.com/user-attachments/assets/86e430b5-fe8a-47d6-ae88-ef5fde456d68" />
 
 ---
 
@@ -249,13 +231,13 @@ c) **Signar:** s’utilitza la **clau privada del remitent**.
 d) **Verificar signatura:** s’utilitza la **clau pública del remitent**. 
 
 ### Qüestió 2: Signatura vs Xifrat (taula)
-| Característica | Signatura Digital | Xifrat (E2EE) | Signatura + Xifrat |
-|---|---|---|---|
-| Garanteix confidencialitat | No | Sí | Sí |
-| Garanteix autenticació | Sí | No | Sí |
-| Garanteix integritat | Sí | No | Sí |
-| Pot ser llegit pel servidor | Sí | No | No |
-| Requereix clau pública del destinatari | No | Sí | Sí | 
+| Característica              | Signatura Digital | Xifrat (E2EE) | Signatura + Xifrat |
+|-----------------------------|------------------|--------------|-------------------|
+| Garanteix confidencialitat  | No               | Sí           | Sí                |
+| Garanteix autenticació      | Sí               | No           | Sí                |
+| Garanteix integritat        | Sí               | No           | Sí                |
+| Pot ser llegit pel servidor | Sí               | No           | No                |
+
 
 ### Qüestió 3: TLS vs GPG
 a) **SMTP amb STARTTLS:** xifrat **en trànsit** (entre servidors). Els servidors poden llegir el correu quan el desencripten per emmagatzemar-lo.  
