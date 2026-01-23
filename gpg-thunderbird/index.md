@@ -231,12 +231,7 @@ c) **Signar:** s’utilitza la **clau privada del remitent**.
 d) **Verificar signatura:** s’utilitza la **clau pública del remitent**. 
 
 ### Qüestió 2: Signatura vs Xifrat (taula)
-| Característica              | Signatura Digital | Xifrat (E2EE) | Signatura + Xifrat |
-|-----------------------------|------------------|--------------|-------------------|
-| Garanteix confidencialitat  | No               | Sí           | Sí                |
-| Garanteix autenticació      | Sí               | No           | Sí                |
-| Garanteix integritat        | Sí               | No           | Sí                |
-| Pot ser llegit pel servidor | Sí               | No           | No                |
+<img width="775" height="553" alt="image" src="https://github.com/user-attachments/assets/83c891bd-78cb-4e3e-85b1-603469b7737e" />
 
 
 ### Qüestió 3: TLS vs GPG
