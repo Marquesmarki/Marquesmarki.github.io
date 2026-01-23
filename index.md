@@ -1,13 +1,8 @@
-# Proyectos ASIX – Alex Marques
+# Projectes ASIX – Alex Marques
 
-Bienvenido a mi repositorio de prácticas y proyectos.
+Benvingut al meu repositori de pràctiques i projectes.
 
-## Seguridad y correo
-- [Servidor Mailcow con Docker](mailcow/)
+## Serveis
+- [Servidor Mailcow amb Docker](mailcow/)
 - [GPG + Thunderbird (E2EE)](gpg-thunderbird/)
 
-## Redes
-- [pfSense i DMZ](pfsense/)
-
-## Sistemas
-- [TrueNAS iSCSI / NFS](truenas/)
