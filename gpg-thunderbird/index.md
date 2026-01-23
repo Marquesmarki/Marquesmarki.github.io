@@ -7,3 +7,5 @@ Pràctica de xifrat de correu electrònic amb OpenPGP.
 - Signatura digital
 - Xifrat d’extrem a extrem
 - Proves i verificacions
+
+[Tornar a la pàgina principal](../)
