@@ -50,9 +50,6 @@
 Comanda utilitzada:
 gpg --full-generate-key
 
-yaml
-Copiar código
-
 Configuració típica:
 - Tipus: RSA i RSA
 - Mida: 4096 bits
@@ -67,9 +64,9 @@ Configuració típica:
 ### 2.3 Verificació de la clau creada
 gpg --list-keys
 
-yaml
-Copiar código
 S’hi comprova que apareix la clau `pub` i la subclau `sub` (xifrat).
+<img width="940" height="271" alt="image" src="https://github.com/user-attachments/assets/91cdf8bd-d5a6-4403-83a6-f8f6e27141ac" />
+
 
 ### 2.4 Generació de la segona parella de claus
 Es repeteix el mateix procés per al segon usuari (ex: alex2@...). 
@@ -77,7 +74,6 @@ Es repeteix el mateix procés per al segon usuari (ex: alex2@...).
 **Captures (obligatòries):**
 - Instal·lació / verificació `gpg --version`
 - Generació de clau 1
-  <img width="940" height="271" alt="image" src="https://github.com/user-attachments/assets/8ce7be13-9f02-4ad7-a9b9-cad63a77c645" />
 - `gpg --list-keys`
 - Generació de clau 2
   <img width="940" height="392" alt="image" src="https://github.com/user-attachments/assets/823873b0-2152-4f56-8e64-deed615953c2" />
