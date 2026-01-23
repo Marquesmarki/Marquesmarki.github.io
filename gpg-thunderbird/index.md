@@ -74,6 +74,7 @@ Es repeteix el mateix procés per al segon usuari (ex: alex2@...).
 **Captures (obligatòries):**
 - Instal·lació / verificació `gpg --version`
 - Generació de clau 1
+  <img width="940" height="271" alt="image" src="https://github.com/user-attachments/assets/91cdf8bd-d5a6-4403-83a6-f8f6e27141ac" />
 - `gpg --list-keys`
 - Generació de clau 2
   <img width="940" height="392" alt="image" src="https://github.com/user-attachments/assets/823873b0-2152-4f56-8e64-deed615953c2" />
