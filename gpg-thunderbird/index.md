@@ -42,8 +42,7 @@
 
 ### 2.1 Instal·lació de GPG
 - Windows: instal·lació de Gpg4win
-- Linux: instal·lació de `gnupg`
-- Verificació: executar `gpg --version`
+
   <img width="940" height="321" alt="image" src="https://github.com/user-attachments/assets/a1705e0a-2161-4a46-8194-e5351c7218c5" />
 
 
