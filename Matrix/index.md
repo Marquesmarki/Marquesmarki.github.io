@@ -31,7 +31,7 @@ L’objectiu d’aquesta pràctica és desplegar i configurar un **servidor de m
 
 ## 1) Requisits previs
 
-- Sistema Linux amb Docker i Docker Compose
+- Docker
 - Connexió a Internet
 - Navegador web
 - Coneixements bàsics de contenidors
