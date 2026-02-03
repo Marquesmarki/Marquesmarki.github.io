@@ -240,8 +240,78 @@ Les seves funcions principals són:
 
 ---
 
-## Conclusions
+## 12) Exercicis opcionals
 
-A través d’aquesta pràctica s’ha comprovat que Matrix és una alternativa segura, descentralitzada i flexible als sistemes de missatgeria tradicionals, permetent xifrat d’extrem a extrem i control total del servidor.
+A continuació es mostren els **exercicis opcionals** realitzats sobre el servidor Matrix desplegat, seguint les indicacions de la pràctica.
 
-La pràctica compleix els objectius del mòdul M0375.
+---
+
+### Exercici 1: Creació d’una sala pública
+
+Es crea una **sala pública** dins del servidor Matrix per permetre l’accés a qualsevol usuari del servidor.
+
+Accions realitzades:
+- Creació d’una nova sala des del client Element
+- Assignació de nom i descripció
+- Configuració de la sala com a **pública**
+- Verificació que apareix al directori de sales
+
+La sala queda accessible per a altres usuaris i permet comprovar el funcionament de les sales obertes a Matrix.
+
+<img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/324ffd52-2b91-4db3-abc2-3350214d31b3" />
+
+---
+
+### Exercici 2: Bot simple (avançat)
+
+Es crea un **bot simple** que es connecta al servidor Matrix des del terminal i interactua dins d’una sala.
+
+Funcionalitats comprovades:
+- Connexió del bot al servidor Matrix des del terminal
+- Invitació del bot a una sala
+- Enviament automàtic de missatges
+- Resposta del bot a paraules clau (exemple: `hola`)
+
+El bot demostra la possibilitat d’integrar **clients automatitzats** al servidor Matrix.
+
+<img width="940" height="83" alt="image" src="https://github.com/user-attachments/assets/8b36bef9-134b-4743-bb5b-79075574792d" />
+
+<img width="931" height="213" alt="image" src="https://github.com/user-attachments/assets/937070c1-e882-4f95-9409-a738b34b107f" />
+
+<img width="941" height="192" alt="image" src="https://github.com/user-attachments/assets/ca2f3530-e80d-4c7d-b1d4-7ec3ce314ea1" />
+
+---
+
+### Exercici 3: Backup de dades del servidor
+
+Es realitza una **còpia de seguretat completa** del servidor Matrix mitjançant un script.
+
+Procés realitzat:
+- Aturada del contenidor Synapse
+- Compressió de les dades del servidor
+- Creació d’un fitxer `.tar.gz` amb data
+- Verificació de la còpia generada
+
+Elements inclosos al backup:
+- Directori de dades de Synapse
+- Base de dades
+- Configuració del servidor
+
+Aquest procediment permet garantir la **recuperació del servei** en cas de fallada o migració.
+
+<img width="940" height="230" alt="image" src="https://github.com/user-attachments/assets/0fbf36d3-3b70-4402-b5aa-6b1d3aa926dd" />
+
+<img width="941" height="99" alt="image" src="https://github.com/user-attachments/assets/d181a81f-5aac-4dd9-9aa4-c87b00dc3fae" />
+
+---
+
+
+## Reflexió personal
+
+Durant aquesta pràctica he après com funciona la missatgeria descentralitzada i quins avantatges té Matrix davant d’altres aplicacions més conegudes. Al principi, la configuració del servidor Synapse amb Docker ha estat la part més complicada, sobretot pel tema dels ports, la xarxa i la creació d’usuaris, però això m’ha ajudat a entendre millor com funcionen els contenidors i els serveis en xarxa.
+
+També he pogut comprendre la importància del xifrat d’extrem a extrem (E2EE) i la verificació de dispositius per garantir la seguretat de les comunicacions. A diferència de plataformes com WhatsApp o Telegram, Matrix permet tenir més control sobre les dades, ja que es pot auto-allotjar el servidor.
+
+L’auto-allotjament ofereix avantatges com la independència de serveis externs i un major control de la informació, tot i que també requereix més responsabilitat en el manteniment i la seguretat del sistema.
+
+En un entorn real, considero que Matrix seria útil en centres educatius, empreses o equips de treball que necessitin comunicacions privades i segures. Aquesta pràctica m’ha ajudat a entendre millor com funcionen les plataformes de missatgeria actuals i la seva utilitat en entorns professionals.
