@@ -1,237 +1,305 @@
-# NF – Servidor de Streaming amb Icecast i Docker
+# NF3 – Ràdio per Internet amb Icecast i Docker
 
 **Mòdul:** M0375 – Serveis de xarxa i Internet  
-**Pràctica:** Servidor de ràdio per Internet amb Icecast  
+**Pràctica:** NF3 – Ràdio per Internet  
 **Alumne:** Alex Marques  
-**Tecnologies:** Icecast + FFmpeg + Docker Compose  
+**Tecnologia:** Icecast + FFmpeg + Docker Compose  
 
 ---
 
-## 1) Objectius de la pràctica
+## Objectius de la pràctica
 
-### Objectius generals
-- Desplegar un servidor de ràdio per Internet amb Icecast
-- Emissió d’àudio en streaming mitjançant Docker
-- Configurar diferents formats i qualitats d’àudio
-
-### Resultats esperats
-- Servei Icecast funcional
-- Reproducció del stream des de navegador i VLC
-- Gestió de múltiples mount points
+L’objectiu d’aquesta pràctica és desplegar i configurar un **servidor de ràdio per Internet amb Icecast**, utilitzant **Docker Compose**, emetre àudio en directe mitjançant **FFmpeg**, i verificar el funcionament del servei amb diferents formats i qualitats d’àudio.
 
 ---
 
-## 2) Requisits previs
+## Índex
 
-### Programari necessari
-- Docker
-- Docker Compose
-- Navegador web o VLC
-
-### Coneixements previs
-- Contenidors Docker
-- Fitxers de configuració XML i YAML
-- Conceptes bàsics de streaming
-
-### Fitxers d’àudio
-- Fitxers MP3 utilitzats amb llicència lliure o pròpia
-
----
-
-## 3) Preparació de l’entorn
-
-### 3.1 Estructura de directoris
-
-icecast-AlexMarques/
-├── audio/
-├── config/
-│ └── icecast.xml
-├── docker-compose.yml
-
-
-### 3.2 Incorporació de fitxers d’àudio
-
-Els fitxers MP3 es col·loquen dins del directori `audio/` per ser utilitzats pel streamer.
+1. Requisits previs  
+2. Preparació de l’entorn  
+3. Configuració d’Icecast  
+4. Desplegament amb Docker Compose  
+5. Verificació del servei  
+6. Configuració avançada  
+7. Accés a l’administració  
+8. Streaming en format Opus (opcional)  
+9. Monitorització i estadístiques  
+10. Captures obligatòries  
+11. Proves de funcionalitat  
+12. Qüestions  
+13. Exercicis opcionals  
+14. Reflexió personal  
+15. Conclusions  
 
 ---
 
-## 4) Configuració d’Icecast
+## 1) Requisits previs
 
-### 4.1 Fitxer `config/icecast.xml`
-
-Configuració principal:
-- Nom del servidor
-- Host i administrador
-- Contrasenyes (source, relay, admin)
-- Límit de connexions
-- Mount point principal
-
-### 4.2 Fitxer `docker-compose.yml`
-
-Serveis configurats:
-- **Icecast** (servidor)
-- **Streamer (FFmpeg)**
-
-Configuració de:
-- Ports
-- Volums
-- Xarxa
-- Variables d’entorn
-- Reinici automàtic
+- Docker i Docker Compose
+- Connexió a Internet
+- Navegador web
+- Reproductor multimèdia (VLC)
+- Fitxers d’àudio en format MP3 amb llicència lliure
 
 ---
 
-## 5) Desplegament amb Docker Compose
+## 2) Preparació de l’entorn
 
-### 5.1 Posada en marxa
+### Estructura de directoris del projecte
+
+Es crea una estructura de directoris per organitzar la configuració, els fitxers d’àudio i els scripts del projecte.
+
+<captura aquí>
+
+---
+
+### Incorporació de fitxers d’àudio
+
+S’afegeixen fitxers MP3 que s’utilitzaran com a font d’àudio per a l’streaming.
+
+<captura aquí>
+
+---
+
+## 3) Configuració d’Icecast
+
+### Fitxer `config/icecast.xml`
+
+Es configura el fitxer principal d’Icecast amb:
+- Personalització del servidor (nom, host, administrador)
+- Límits de connexió
+- Ports del servei
+- Paràmetres de seguretat
+
+<captura aquí>
+
+---
+
+### Autenticació i contrasenyes
+
+Es defineixen les contrasenyes per:
+- Source
+- Relay
+- Administració
+
+<captura aquí>
+
+---
+
+### Mount point principal i metadades
+
+Es configura el **mount point principal** amb les metadades del stream (nom, descripció i gènere).
+
+<captura aquí>
+
+---
+
+## 4) Desplegament amb Docker Compose
+
+### Fitxer `docker-compose.yml`
+
+Es defineixen els serveis següents:
+- Servei Icecast
+- Servei streamer amb FFmpeg
+- Volums i xarxes
+- Variables d’entorn i reinici automàtic
+
+<captura aquí>
+
+---
+
+### Posada en marxa dels contenidors
 
 S’aixequen els contenidors amb Docker Compose.
 
-### 5.2 Verificació d’estat
-
-Es comprova que els contenidors estan actius.
-
-### 5.3 Revisió de logs
-
-Es revisen els logs per assegurar que Icecast i el streamer funcionen correctament.
+<captura aquí>
 
 ---
 
-## 6) Verificació del servei
+### Verificació d’estat i logs
 
-### 6.1 Accés a la interfície web
+Es comprova que els contenidors estan en execució i que no hi ha errors als logs.
+
+<captura aquí>
+
+---
+
+## 5) Verificació del servei
+
+### Accés a la interfície web d’Icecast
 
 S’accedeix a la pàgina principal d’Icecast des del navegador.
 
-### 6.2 Reproducció del stream
-
-El stream es reprodueix correctament:
-- Via navegador
-- Via VLC
+<captura aquí>
 
 ---
 
-## 7) Configuració avançada
+### Reproducció del stream
 
-### 7.1 Segon mount point MP3 (HQ)
+Es comprova la reproducció del stream mitjançant navegador web i VLC.
 
-Es crea un segon mount point amb qualitat alta:
-- MP3 320 kbps
-
-### 7.2 Segon streamer
-
-Es configura un segon streamer FFmpeg per al stream HQ.
-
-### 7.3 Comprovació
-
-Es verifiquen tots els mount points disponibles.
+<captura aquí>
 
 ---
 
-## 8) Accés a l’administració
+## 6) Configuració avançada
 
-### 8.1 Panell d’administració
+### Segon mount point MP3 d’alta qualitat (HQ)
 
-Accés mitjançant credencials d’administrador.
+Es crea un segon mount point amb major qualitat d’àudio.
 
-### 8.2 Estadístiques
-
-Visualització de:
-- Oients connectats
-- Fonts actives
-- Amplada de banda
+<captura aquí>
 
 ---
 
-## 9) Streaming en format Opus (opcional)
+### Segon streamer per al stream HQ
 
-### 9.1 Mount point Opus
+Es configura un segon procés FFmpeg per al stream d’alta qualitat.
 
-Creació d’un mount point amb format Opus.
-
-### 9.2 Streamer Opus
-
-Configuració de FFmpeg per emetre en Opus.
-
-### 9.3 Comparativa
-
-- Opus: millor compressió
-- MP3: més compatibilitat
+<captura aquí>
 
 ---
 
-## 10) Monitorització i estadístiques
+### Reinici i comprovació dels mount points
 
-### 10.1 Estadístiques en temps real
+Es reinicia el servei i es comprova que tots els mount points funcionen correctament.
 
-Consultables des de la web d’Icecast.
-
-### 10.2 Anàlisi de logs
-
-Revisió d’accessos i errors del servei.
+<captura aquí>
 
 ---
 
-## 11) Captures obligatòries
+## 7) Accés a l’administració
 
-- Contenidors actius (terminal)
-- Pàgina principal d’Icecast
-- Reproducció del stream
-- Panell d’administració
-- Logs amb connexió del source
+### Panell d’administració
+
+S’accedeix al panell d’administració d’Icecast per gestionar fonts i connexions.
+
+<captura aquí>
 
 ---
 
-## 12) Proves de funcionalitat
+### Estadístiques i gestió de fonts
 
-### Mount points configurats
+Es visualitzen les estadístiques de connexió i les fonts actives.
 
-| Mount Point | Format | Bitrate | Estat | URL |
-|-----------|--------|---------|-------|-----|
+<captura aquí>
+
+---
+
+## 8) Streaming en format Opus (opcional)
+
+### Mount point en format Opus
+
+Es crea un mount point addicional utilitzant el format Opus.
+
+<captura aquí>
+
+---
+
+### Streamer Opus amb FFmpeg
+
+Es configura FFmpeg per emetre en format Opus.
+
+<captura aquí>
+
+---
+
+### Comparativa de qualitat i compatibilitat
+
+Es comparen els formats MP3 i Opus en termes de qualitat i compatibilitat.
+
+---
+
+## 9) Monitorització i estadístiques
+
+### Estadístiques en temps real
+
+Es visualitzen les estadístiques en temps real des de la interfície web.
+
+<captura aquí>
+
+---
+
+### Anàlisi de logs
+
+Es revisen els logs d’Icecast per detectar accessos i possibles errors.
+
+<captura aquí>
+
+---
+
+## 10) Captures obligatòries
+
+- Contenidors actius (terminal)  
+- Pàgina principal d’Icecast amb mount points  
+- Reproducció del stream  
+- Panell d’administració  
+- Logs amb connexió del source  
+
+<captura aquí>
+
+---
+
+## 11) Proves de funcionalitat
+
+| Mount point | Format | Bitrate | Estat | URL |
+|------------|--------|---------|-------|-----|
 | /radio-AlexMarques.mp3 | MP3 | 128 kbps | Actiu | http://localhost:8000/radio-AlexMarques.mp3 |
 | /radio-AlexMarques-hq.mp3 | MP3 | 320 kbps | Actiu | http://localhost:8000/radio-AlexMarques-hq.mp3 |
 | /radio-AlexMarques.opus | Opus | 96 kbps | Actiu | http://localhost:8000/radio-AlexMarques.opus |
 
 ---
 
-## 13) Qüestions
+## 12) Qüestions
 
-### 13.1 Càlcul d’amplada de banda
+### Càlcul d’amplada de banda
 
-- 15 oients a 128 kbps → **1,92 Mbps**
-- Amb 10 Mbps → **78 oients aproximadament**
-- Consum mensual amb 10 oients → **414,72 GB/mes**
-
-### 13.2 Resolució d’incidències
-
-- Contrasenya incorrecta del source
-- Mount point mal configurat
-- Servei Icecast aturat
+- Amb 15 oients a 128 kbps: **1,92 Mbps**
+- Amb 10 Mbps de pujada: **78 oients aproximadament**
+- Consum mensual amb 10 oients constants: **414,72 GB/mes**
 
 ---
 
-## 14) Exercicis opcionals
+### Resolució d’incidències
 
-### 14.1 Playlist rotativa
-- Configuració d’una llista d’àudio rotativa amb FFmpeg
-
-### 14.2 Metadades dinàmiques
-- Actualització automàtica del títol de la cançó
-
-### 14.3 Programació horària
-- Execució programada mitjançant scripts i cron
+- Contrasenya del source incorrecta
+- Mount point mal escrit
+- Servei Icecast aturat o amb errors
 
 ---
 
-## 15) Reflexió personal
+## 13) Exercicis opcionals
 
-Aquesta pràctica m’ha permès entendre com funciona el streaming d’àudio per Internet i com Docker facilita enormement el desplegament del servei. Tot i algunes dificultats inicials amb la configuració, la resolució d’errors m’ha ajudat a millorar la meva capacitat de diagnosi.
+### Playlist rotativa
 
-Icecast és una eina molt útil per a projectes educatius, emissores escolars, podcasts o ràdio corporativa, i representa una alternativa moderna a les ràdios tradicionals.
+Configuració d’una llista de reproducció automàtica amb FFmpeg.
+
+<captura aquí>
 
 ---
 
-## 16) Conclusions
+### Metadades dinàmiques
 
-S’ha desplegat correctament un servidor de ràdio per Internet funcional, amb múltiples formats i qualitats, complint tots els objectius de la pràctica del mòdul M0375.
+Configuració de metadades canviants durant l’emissió.
 
+<captura aquí>
+
+---
+
+### Programació horària
+
+Execució de l’streaming mitjançant scripts i cron.
+
+<captura aquí>
+
+---
+
+## 14) Reflexió personal
+
+Durant aquesta pràctica he après com funciona una ràdio per Internet i la importància d’una bona configuració del servei. Docker facilita molt el desplegament i el manteniment del sistema, permetent reiniciar el servei fàcilment i tenir un entorn controlat.
+
+---
+
+## 15) Conclusions
+
+Icecast és una solució robusta i flexible per a la creació de ràdios per Internet, ideal tant per a projectes educatius com personals, oferint múltiples formats, qualitat d’àudio configurable i una gestió senzilla del servei.
